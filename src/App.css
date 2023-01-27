@@ -1,38 +1,152 @@
-.App {
+@import url('https://fonts.googleapis.com/css2?family=Baloo+Bhaijaan+2&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Baloo Bhaijaan 2', cursive;
+    background-color: #fde68a;
+}
+.mainheading{
+  background-color:#fca5a5;
+  text-align: center;
+  border-radius: 1rem;
+}
+.parentcontainer{
+display: flex;
+}
+.maincontainer{
+  color: white;
+  width: 100%;
+  background-color: black;
+}
+.form{
+  background-color: black;
+  margin-top: 1rem;
+
+
+}
+.forminp{
+  display: flex;
+  flex-direction: row;
+  background-color: black;
+  /* justify-content: center; */
+  justify-content: space-around;
+  padding-bottom: 1rem;
+}
+
+.iptfieldtask{
+  width: 20rem;
+  background-color: white;
+  border-radius: 0.5rem;
   text-align: center;
 }
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.iptfieldasignee{
+  width: 10rem;
+  background-color: white;
+  border-radius: 0.5rem;
+  text-align: center;
 }
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.iptfielddropdown{
+  width: 10rem;
+  background-color: white;
+  border-radius: 0.5rem;
+  text-align: center;
 }
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+.iptfielddate{
+  width: 10rem;
+  background-color: white;
+  border-radius: 0.5rem;
+  text-align: center;
+}
+.submitbtn{
+  background-color: #818cf8;
+  width: 10rem ;
+  padding: 0.5rem;
+  border-radius: 1rem;
+  display: block;
+  margin: auto;
+}
+.opt{
+  background-color: black;
   color: white;
 }
-
-.App-link {
-  color: #61dafb;
+.opcontainer{
+  background-color: black;
+}
+.optitle{
+  background-color: red;
+  text-align: center;
+  margin: 1rem 0rem 1rem 0rem;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.op{
+  background-color: black;
+}
+.tb{
+  display: flex;
+  flex-direction: column;
+}
+.forThead{
+display: flex;
+  background-color: black;
+}
+thead{
+  border: 2px solid white;
+  width: 100%;
+  background-color: blue;
+  text-align: center;
+}
+tbody{
+  display: flex;
+    background-color: black;
+    flex-direction: row
   }
-  to {
-    transform: rotate(360deg);
+  td{
+    border: 2px solid white;
+    width: 100%;
+    background-color: blue;
+    text-align: center;
   }
+  .table row{
+    display: flex;
+    flex-direction: row;
+  }
+
+.showasignee{
+  width: 33%;
+}
+.showstatus{
+  width: 33%;
+}
+.opheader{
+  display: flex;
+  background-color: black;
+  width: 100%;
+  justify-content: space-around
+}
+
+.taskcontent{
+  background-color: blue;
+  display: flex;
+  flex-direction: column;
+}
+
+.asigneecontent{
+  background-color: blue;
+  display: flex;
+  flex-direction: column; 
+}
+.statuscontent{
+  background-color: black;
+  display: flex;
+  flex-direction: column; 
+}
+.statuscontent>h4,.asigneecontent>h4,.taskcontent>h4,.statuscontent>h3,.asigneecontent>h3,.taskcontent>h3{
+  background-color: black;
+}
+.showButton{
+  background-color: aquamarine;
+  width: 4rem;
+  border-radius: 1rem;
+  margin-bottom: 1.5px
 }
