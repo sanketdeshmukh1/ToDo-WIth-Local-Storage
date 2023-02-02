@@ -7,7 +7,7 @@ import Input from './Components/Input';
 function App() {
 
   
-const [ipt, setIpt] = useState({taskId:1,task:"",assignee:"",status:"Not Started",dot:'2023-01-05'})
+const [ipt, setIpt] = useState({taskId:1,task:"",assignee:"",status:"Not Started",priority:"High",dot:'2023-01-05'})
 const [temp,setTemp]=useState(0)
 const [fetchData,setFetchData]=useState(0)
 const [isEdit,setIsEdit]=useState(false)
@@ -51,6 +51,16 @@ if(isEdit)
 setIpt({...ipt,status:e.target.value,taskId:editId})
 else
 setIpt({...ipt,status:e.target.value,taskId:localStorage.getItem("sanket")?maxx:1})
+}
+
+const handleChangePriority=(e)=>{
+  if(flag===1)
+  maxx=browserData[browserData.length-1].taskId+1
+
+if(isEdit)
+setIpt({...ipt,priority:e.target.value,taskId:editId})
+else
+setIpt({...ipt,priority:e.target.value,taskId:localStorage.getItem("sanket")?maxx:1})
 }
 
 const handleChangeDate=(e)=>{
@@ -139,7 +149,7 @@ const handleEdit=(id)=>{
   } )
   console.log(editArr)
   let editObj=editArr[0]
-  setIpt({task:editObj.task,assignee:editObj.assignee,status:editObj.status,dot:editObj.dot})
+  setIpt({task:editObj.task,assignee:editObj.assignee,status:editObj.status,priority:editObj.priority,dot:editObj.dot})
   //setIpt({...ipt,task:editObj.task})
   // setIpt({...ipt,assignee:editObj.assignee})
   // setIpt({...ipt,dot:editObj.dot})
@@ -163,7 +173,7 @@ const handleEdit=(id)=>{
   <img className="mainlogo" src={todo} alt="" />
     <div className="maincontainer">
 
-      <Input handleChangeTask={handleChangeTask} handleChangeAssignee={handleChangeAssignee} handleChangeStatus={handleChangeStatus} handleChangeDate={handleChangeDate} handleSubmit={handleSubmit} ipt={ipt}/>
+      <Input handleChangeTask={handleChangeTask} handleChangeAssignee={handleChangeAssignee} handleChangeStatus={handleChangeStatus} handleChangePriority={handleChangePriority} handleChangeDate={handleChangeDate} handleSubmit={handleSubmit} ipt={ipt}/>
 
       <Output handleDelete={handleDelete} handleEdit={handleEdit} browserData={browserData}/>
     </div>

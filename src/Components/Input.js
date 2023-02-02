@@ -2,7 +2,7 @@ import React from 'react'
 import '../App.css';
 
 function Input(props) {
-    const {handleChangeTask, handleChangeAssignee, handleChangeStatus, handleChangeDate ,handleSubmit ,ipt}=props
+    const {handleChangeTask, handleChangeAssignee, handleChangeStatus,handleChangePriority, handleChangeDate ,handleSubmit ,ipt}=props
   return (
 <>
    
@@ -20,6 +20,13 @@ function Input(props) {
 <option value="MRStage">MRStage</option>
 <option value="Blocked">Blocked</option>
 </select>
+
+<select className="iptfielddropdown" onChange={handleChangePriority} required value={ipt.priority} >
+<option value="High">High</option>
+<option value="Medium">Medium</option>
+<option value="Low">Low</option>
+</select>
+
 <input className="iptfielddate" type="date" onChange={handleChangeDate} required value={ipt.dot}/>
 </div>
 <button className="submitbtn" type="submit" >Add Task</button>

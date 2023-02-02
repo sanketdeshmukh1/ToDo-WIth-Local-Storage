@@ -10,14 +10,20 @@
   background-color:#fca5a5;
   text-align: center;
   border-radius: 1rem;
+  width: 100%;
 }
 .parentcontainer{
 display: flex;
+width: 100%;
+}
+.mainlogo{
+  flex-grow:0.5;
 }
 .maincontainer{
   color: white;
   width: 100%;
   background-color: black;
+  
 }
 .form{
   background-color: black;
@@ -32,6 +38,7 @@ display: flex;
   /* justify-content: center; */
   justify-content: space-around;
   padding-bottom: 1rem;
+  flex-wrap: wrap;
 }
 
 .iptfieldtask{
@@ -57,6 +64,7 @@ display: flex;
   background-color: white;
   border-radius: 0.5rem;
   text-align: center;
+   margin-top: 1rem; 
 }
 .submitbtn{
   background-color: #818cf8;
@@ -126,13 +134,13 @@ tbody{
 }
 
 .taskcontent{
-  background-color: blue;
+  background-color: black;
   display: flex;
   flex-direction: column;
 }
 
 .asigneecontent{
-  background-color: blue;
+  background-color: black;
   display: flex;
   flex-direction: column; 
 }
@@ -140,6 +148,7 @@ tbody{
   background-color: black;
   display: flex;
   flex-direction: column; 
+  
 }
 .statuscontent>h4,.asigneecontent>h4,.taskcontent>h4,.statuscontent>h3,.asigneecontent>h3,.taskcontent>h3{
   background-color: black;
@@ -149,4 +158,13 @@ tbody{
   width: 4rem;
   border-radius: 1rem;
   margin-bottom: 1.5px
+}
+.hide{
+  visibility: hidden;
+}
+
+.statuscontent>h4,.asigneecontent>h4,.taskcontent>h4{
+  
+  padding-bottom: 0.10rem;
+  margin-bottom: 0.1rem;
 }
