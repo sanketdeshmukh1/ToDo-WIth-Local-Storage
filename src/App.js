@@ -3,6 +3,8 @@ import {useState,useEffect} from 'react'
 import './App.css';
 import Output from './Components/Output';
 import Input from './Components/Input';
+import { MyTable } from './Components/MyTable';
+import Icon from "react-crud-icons";
 
 function App() {
 
@@ -21,6 +23,8 @@ useEffect(() => {
 
 let newArr=[]
 let flag=browserData.length!==0 ? 1 : 0;
+console.log("first")
+console.log(editId)
 let maxx=1
 
  const handleChangeTask=(e)=>{
@@ -127,6 +131,8 @@ setFetchData((prev)=>prev+1)
 
 }//fn ends
 
+
+
 const handleDelete=(id)=>{
   let delarr=browserData.filter((t)=>{
     if(t.taskId!==id)
@@ -175,7 +181,10 @@ const handleEdit=(id)=>{
 
       <Input handleChangeTask={handleChangeTask} handleChangeAssignee={handleChangeAssignee} handleChangeStatus={handleChangeStatus} handleChangePriority={handleChangePriority} handleChangeDate={handleChangeDate} handleSubmit={handleSubmit} ipt={ipt}/>
 
-      <Output handleDelete={handleDelete} handleEdit={handleEdit} browserData={browserData}/>
+      {/* <Output handleDelete={handleDelete} handleEdit={handleEdit} browserData={browserData}/> */}
+      <h6 className='blank'> </h6>
+      <MyTable browserData={browserData} handleDelete={handleDelete} handleEdit={handleEdit}/>
+      
     </div>
 
 </div>

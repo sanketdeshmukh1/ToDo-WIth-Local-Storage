@@ -15,33 +15,34 @@ function Output(props) {
 <div className="opheader">
 <div className='taskcontent'>
   <h3 >Task</h3>
-  {browserData.map((q)=>{return <h4  key={q.taskId}  className='showtask'>{ q.task} </h4>})}
+  {browserData.map((q)=>{return <li  key={q.taskId}  className='showtask'>{ q.task} </li>})}
 </div>
 <div className='asigneecontent'>
   <h3 >Asignee</h3>
-  {browserData.map((q)=>{return <h4 key={q.taskId} className='showtask'>{ q.assignee} </h4>})}
+  {browserData.map((q)=>{return <li key={q.taskId} className='showtask'>{ q.assignee} </li>})}
 </div>
 
 <div className='statuscontent'>
   <h3 >Status</h3>
-  {browserData.map((q)=>{return <h4 key={q.taskId} className='showtask'>{ q.status} </h4>})}
+  {browserData.map((q)=>{return <li key={q.taskId} className='showtask'>{ q.status} </li>})}
 </div>
 
 <div className='statuscontent'>
   <h3 >Priority</h3>
-  {browserData.map((q)=>{return <h4 key={q.taskId} className='showtask'>{ q.priority} </h4>})}
+  {browserData.map((q)=>{return <li key={q.taskId} className='showtask'>{ q.priority} </li>})}
 </div>
 
 
 <div className='statuscontent'>
   <h3 >Date</h3>
-  {browserData.map((q)=>{return <h4 key={q.taskId} className='showtask'>{ q.dot} </h4>})}
+  {browserData.map((q)=>{return <li key={q.taskId} className='showtask'>{ q.dot} </li>})}
 </div>
 
 <div className='statuscontent'>
   <h3 className='hide'>Button</h3>
   {browserData.map((q)=>{return <Icon name="delete" size="tiny" onClick={()=>{handleDelete(q.taskId)}} key={q.taskId} className='showButton'/>})}
 </div>
+
 <div className='statuscontent'>
   <h3 className='hide'>Button</h3>
   

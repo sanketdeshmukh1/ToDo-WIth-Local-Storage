@@ -90,35 +90,7 @@ width: 100%;
 .op{
   background-color: black;
 }
-.tb{
-  display: flex;
-  flex-direction: column;
-}
-.forThead{
-display: flex;
-  background-color: black;
-}
-thead{
-  border: 2px solid white;
-  width: 100%;
-  background-color: blue;
-  text-align: center;
-}
-tbody{
-  display: flex;
-    background-color: black;
-    flex-direction: row
-  }
-  td{
-    border: 2px solid white;
-    width: 100%;
-    background-color: blue;
-    text-align: center;
-  }
-  .table row{
-    display: flex;
-    flex-direction: row;
-  }
+
 
 .showasignee{
   width: 33%;
@@ -168,3 +140,15 @@ tbody{
   padding-bottom: 0.10rem;
   margin-bottom: 0.1rem;
 }
+
+li{
+    background-color: black;
+    list-style: none;
+    padding-bottom: 0.10rem;
+    margin-bottom: 0.1rem;
+}
+.blank{
+height: 0.5rem;
+background-color: black;
+}
+

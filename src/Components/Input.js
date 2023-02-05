@@ -1,5 +1,5 @@
 import React from 'react'
-import '../App.css';
+//import '../App.css';
 
 function Input(props) {
     const {handleChangeTask, handleChangeAssignee, handleChangeStatus,handleChangePriority, handleChangeDate ,handleSubmit ,ipt}=props
