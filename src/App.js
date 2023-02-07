@@ -1,16 +1,19 @@
 import todo from './images/todo2.svg';
-import {useState,useEffect} from 'react'
+import {useState,useEffect,createContext} from 'react'
 import './App.css';
 import Output from './Components/Output';
 import Input from './Components/Input';
 import { MyTable } from './Components/MyTable';
 import Icon from "react-crud-icons";
+import ModalComponent from './Components/ModalComponent';
+
+//export const ModalContext= createContext()
 
 function App() {
-
   
 const [ipt, setIpt] = useState({taskId:1,task:"",assignee:"",status:"Not Started",priority:"High",dot:'2023-01-05'})
 const [temp,setTemp]=useState(0)
+const [showModal,setShowModal] = useState(false);
 const [fetchData,setFetchData]=useState(0)
 const [isEdit,setIsEdit]=useState(false)
 const [editId,setEditId]=useState(0)
@@ -179,12 +182,16 @@ const handleEdit=(id)=>{
   <img className="mainlogo" src={todo} alt="" />
     <div className="maincontainer">
 
+  
       <Input handleChangeTask={handleChangeTask} handleChangeAssignee={handleChangeAssignee} handleChangeStatus={handleChangeStatus} handleChangePriority={handleChangePriority} handleChangeDate={handleChangeDate} handleSubmit={handleSubmit} ipt={ipt}/>
-
+      
       {/* <Output handleDelete={handleDelete} handleEdit={handleEdit} browserData={browserData}/> */}
       <h6 className='blank'> </h6>
-      <MyTable browserData={browserData} handleDelete={handleDelete} handleEdit={handleEdit}/>
-      
+      <MyTable browserData={browserData} handleDelete={handleDelete} handleEdit={handleEdit} showModal={showModal} setShowModal={setShowModal}/>
+
+      {/* <ModalContext.Provider value={{id2:1}}> */}
+      <ModalComponent handleChangeTask={handleChangeTask} handleChangeAssignee={handleChangeAssignee} handleChangeStatus={handleChangeStatus} handleChangePriority={handleChangePriority} handleChangeDate={handleChangeDate} handleSubmit={handleSubmit} ipt={ipt} showModal={showModal} setShowModal={setShowModal}/>
+      {/* </ModalContext.Provider> */}
     </div>
 
 </div>

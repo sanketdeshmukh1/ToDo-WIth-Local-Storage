@@ -22,22 +22,14 @@ export const COLUMNS=[
     } ,
     {
         Header: "Delete",
-        Cell: ({ original }) => (
-        //   <button  onClick={()=>{console.log("button clicked from table")}}>
-        //   Delete
-        // </button>
+        Cell: () => (
         <Icon name="delete" size="tiny" />
-
         )
     } ,
     {
         Header: "Edit",
-        Cell: ({ original }) => (
-        //   <button  onClick={()=>{console.log("button clicked from table")}}>
-        //   Delete
-        // </button>
+        Cell: () => (
         <Icon name="edit" size="tiny" />
-
         )
     }
 ]

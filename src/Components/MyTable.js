@@ -4,19 +4,11 @@ import { COLUMNS } from './columns'
 import './table.css'
 import Icon from "react-crud-icons";
 
-
-
 export const MyTable = (props) => { 
-const {browserData,handleDelete,handleEdit}=props
+const {browserData,handleDelete,handleEdit,showModal,setShowModal}=props
 
     // const columns=useMemo(()=>COLUMNS,[])
      // const data=useMemo(()=>dummyData,[])
-     const getRowId = (row, relativeIndex, parent) => {
-        // In row object you have access to data.
-        // Yon choose parameter. In this example I used uniqueId
-        console.log()
-
-      };
 
 const tableInstance = useTable({
     columns:COLUMNS,
@@ -57,7 +49,12 @@ const { getTableProps,getTableBodyProps,headerGroups,rows,prepareRow } = tableIn
                             {
                                 row.cells.map((cell)=>{
                                     return <td onClick={()=>{ if(cell.column.Header==="Delete"){
-                                   handleDelete(row.original.taskId)} else if(cell.column.Header==="Edit") handleEdit(row.original.taskId)}} {...cell.getCellProps()}>{cell.render('Cell')}</td>
+                                   handleDelete(row.original.taskId)} else if(cell.column.Header==="Edit") 
+                                   {
+                                    handleEdit(row.original.taskId)
+                                    setShowModal(true) 
+                                     } 
+                                    }} {...cell.getCellProps()}>{cell.render('Cell')}</td>
                                 })
                             }
 
