@@ -11,9 +11,10 @@ import ModalComponent from './Components/ModalComponent';
 
 function App() {
   
-const [ipt, setIpt] = useState({taskId:1,task:"",assignee:"",status:"Not Started",priority:"High",dot:'2023-01-05'})
+const [ipt, setIpt] = useState({taskId:1,task:"",taskHeading:"",assignee:"",status:"Not Started",priority:"High",dot:'2023-01-05'})
 const [temp,setTemp]=useState(0)
-const [showModal,setShowModal] = useState(false);
+const [showEditModal,setShowEditModal] = useState(false);
+const [showTaskModal,setShowTaskModal] = useState(false);
 const [fetchData,setFetchData]=useState(0)
 const [isEdit,setIsEdit]=useState(false)
 const [editId,setEditId]=useState(0)
@@ -38,6 +39,18 @@ if(isEdit)
 setIpt({...ipt,task:e.target.value,taskId:editId})
 else
 setIpt({...ipt,task:e.target.value,taskId:localStorage.getItem("sanket")?maxx:1})
+ }
+
+
+
+ const handleChangeTaskHeading=(e)=>{
+  if(flag===1)
+  maxx=browserData[browserData.length-1].taskId+1
+
+if(isEdit)
+setIpt({...ipt,taskHeading:e.target.value,taskId:editId})
+else
+setIpt({...ipt,taskHeading:e.target.value,taskId:localStorage.getItem("sanket")?maxx:1})
  }
 
 const handleChangeAssignee=(e)=>{
@@ -100,7 +113,7 @@ return q
 localStorage.setItem("sanket",JSON.stringify(tempArr));
 setFetchData((prev)=>prev+1)
 setIsEdit(false)
-setIpt({...ipt,task:"",assignee:"",status:"Not Started"})
+setIpt({...ipt,task:"",taskHeading:"",assignee:"",status:"Not Started"})
 return;
   }
 
@@ -118,11 +131,11 @@ newArr=[...browserData,ipt]
 localStorage.setItem("sanket",JSON.stringify(newArr));
 setFetchData((prev)=>prev+1)
   // setArr(newArr)
-   setIpt({...ipt,task:"",assignee:"",status:"Not Started"})
+   setIpt({...ipt,task:"",taskHeading:"",assignee:"",status:"Not Started"})
 
 }else{
   alert(e.target[0].value+"-"+e.target[1].value+"-"+e.target[2].value)
-  console.log(ipt.task+"--"+ipt.assignee+"--"+ipt.status)
+  console.log(ipt.task+"--"+ipt.taskHeading+"--"+ipt.assignee+"--"+ipt.status)
   
   newArr=[...newArr,ipt]
 
@@ -148,6 +161,16 @@ const handleDelete=(id)=>{
   setTemp(id)
 }
 
+const handleTaskDesc=(id)=>{
+  console.log("hi ia am handle task")
+  let tempArr=browserData.filter((t)=>{
+    if(t.taskId===id)
+    return t
+  } )
+  let taskobj=tempArr[0]
+  setIpt({task:taskobj.task, taskHeading:taskobj.taskHeading, assignee:taskobj.assignee,status:taskobj.status,priority:taskobj.priority,dot:taskobj.dot})
+ }
+
 const handleEdit=(id)=>{
   setEditId(id)
   setIsEdit(true)
@@ -158,7 +181,7 @@ const handleEdit=(id)=>{
   } )
   console.log(editArr)
   let editObj=editArr[0]
-  setIpt({task:editObj.task,assignee:editObj.assignee,status:editObj.status,priority:editObj.priority,dot:editObj.dot})
+  setIpt({task:editObj.task, taskHeading:editObj.taskHeading, assignee:editObj.assignee,status:editObj.status,priority:editObj.priority,dot:editObj.dot})
   //setIpt({...ipt,task:editObj.task})
   // setIpt({...ipt,assignee:editObj.assignee})
   // setIpt({...ipt,dot:editObj.dot})
@@ -183,14 +206,17 @@ const handleEdit=(id)=>{
     <div className="maincontainer">
 
   
-      <Input handleChangeTask={handleChangeTask} handleChangeAssignee={handleChangeAssignee} handleChangeStatus={handleChangeStatus} handleChangePriority={handleChangePriority} handleChangeDate={handleChangeDate} handleSubmit={handleSubmit} ipt={ipt}/>
+      <Input handleChangeTask={handleChangeTask} handleChangeTaskHeading={handleChangeTaskHeading} handleChangeAssignee={handleChangeAssignee} handleChangeStatus={handleChangeStatus} handleChangePriority={handleChangePriority} handleChangeDate={handleChangeDate} handleSubmit={handleSubmit}  ipt={ipt}/>
       
       {/* <Output handleDelete={handleDelete} handleEdit={handleEdit} browserData={browserData}/> */}
       <h6 className='blank'> </h6>
-      <MyTable browserData={browserData} handleDelete={handleDelete} handleEdit={handleEdit} showModal={showModal} setShowModal={setShowModal}/>
+      <MyTable browserData={browserData} handleDelete={handleDelete} handleChangeTaskHeading={handleChangeTaskHeading} handleEdit={handleEdit} showEditModal={showEditModal} setShowEditModal={setShowEditModal} showTaskModal={showTaskModal} setShowTaskModal={setShowTaskModal} handleTaskDesc={handleTaskDesc} 
+      
+      />
 
       {/* <ModalContext.Provider value={{id2:1}}> */}
-      <ModalComponent handleChangeTask={handleChangeTask} handleChangeAssignee={handleChangeAssignee} handleChangeStatus={handleChangeStatus} handleChangePriority={handleChangePriority} handleChangeDate={handleChangeDate} handleSubmit={handleSubmit} ipt={ipt} showModal={showModal} setShowModal={setShowModal}/>
+      <ModalComponent handleChangeTask={handleChangeTask} handleChangeTaskHeading={handleChangeTaskHeading} handleChangeAssignee={handleChangeAssignee} handleChangeStatus={handleChangeStatus} handleChangePriority={handleChangePriority} handleChangeDate={handleChangeDate} handleSubmit={handleSubmit} ipt={ipt} setIpt={setIpt} showEditModal={showEditModal} setShowEditModal={setShowEditModal}
+      showTaskModal={showTaskModal} setShowTaskModal={setShowTaskModal} handleTaskDesc={handleTaskDesc} />
       {/* </ModalContext.Provider> */}
     </div>
 

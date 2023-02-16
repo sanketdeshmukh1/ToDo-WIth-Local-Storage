@@ -1,8 +1,8 @@
 import Icon from "react-crud-icons";
 export const COLUMNS=[
     {
-        Header:'Task',
-        accessor:'task'
+        Header:'Task Heading',
+        accessor:'taskHeading'
     },
     {
         Header:'Assignee',

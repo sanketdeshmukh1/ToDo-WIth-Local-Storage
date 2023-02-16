@@ -5,30 +5,60 @@ import ModalContext from '../App'
 function ModalComponent(props) {
    // const {handleChangeTask,handleChangeAssignee}=useContext(ModalContext)
 
-    const {handleChangeTask,handleChangeAssignee,handleChangeStatus,handleChangePriority,handleChangeDate, handleSubmit ,ipt,showModal,setShowModal}=props
+    const {handleChangeTask,handleChangeTaskHeading,handleChangeAssignee,handleChangeStatus,handleChangePriority,handleChangeDate, handleSubmit ,ipt, setIpt,showEditModal,setShowEditModal,showTaskModal,setShowTaskModal}=props
   return (
 <>
-{/* <button onClick={()=>{setShowModal(true)}}>modal button</button> */}
-<Modal isOpen={showModal}
-onRequestClose={()=>setShowModal(false)} style={
+{/* <button onClick={()=>{setShowEditModal(true)}}>modal button</button> */}
+<Modal isOpen={showEditModal}
+onRequestClose={()=>{setShowEditModal(false)
+  setIpt({...ipt,task:"",taskHeading:"",assignee:"",status:"Not Started"})
+}} style={
 {
     overlay:{
-        backgroundColor:'#818cf8',
+//        backgroundColor:'#818cf8',
     },
     content:{
         backgroundColor:'white',
         width:'30rem',
         height:'30rem',
         margin:"auto",
-        borderRadius:"1rem"
+        borderRadius:"1rem",
+        textAlign:"center"
     }
 }
 
   }>
+<h3 >Edit Task</h3>
+  <Input handleChangeTask={handleChangeTask} handleChangeTaskHeading={handleChangeTaskHeading} handleChangeAssignee={handleChangeAssignee} handleChangeStatus={handleChangeStatus} handleChangePriority={handleChangePriority} handleChangeDate={handleChangeDate} handleSubmit={handleSubmit} ipt={ipt}/> 
 
-  <Input handleChangeTask={handleChangeTask} handleChangeAssignee={handleChangeAssignee} handleChangeStatus={handleChangeStatus} handleChangePriority={handleChangePriority} handleChangeDate={handleChangeDate} handleSubmit={handleSubmit} ipt={ipt}/> 
+<button onClick={()=>{setShowEditModal(false)   
+   setIpt({...ipt,task:"",taskHeading:"",assignee:"",status:"Not Started"})}}>close</button>
+</Modal>
 
-<button onClick={()=>{setShowModal(false)}}>close</button>
+<Modal isOpen={showTaskModal}
+onRequestClose={()=>{setShowTaskModal(false)
+  setIpt({...ipt,task:"",taskHeading:"",assignee:"",status:"Not Started"})}} style={
+{
+    overlay:{
+//        backgroundColor:'#818cf8',
+    },
+    content:{
+        backgroundColor:'white',
+        width:'30rem',
+        height:'30rem',
+        margin:"auto",
+        borderRadius:"1rem",
+        textAlign:"center"
+    }
+}
+
+  }>
+<h3 >Task Description</h3>
+{/* <h2>Hi your task description is</h2> */}
+<h3>{ipt.task}</h3>
+<button onClick={()=>{setShowTaskModal(false)
+setIpt({...ipt,task:"",taskHeading:"",assignee:"",status:"Not Started"})
+}}>close</button>
 </Modal>
 </>
   )

@@ -2,13 +2,15 @@ import React from 'react'
 //import '../App.css';
 
 function Input(props) {
-    const {handleChangeTask, handleChangeAssignee, handleChangeStatus,handleChangePriority, handleChangeDate ,handleSubmit ,ipt}=props
+    const {handleChangeTask, handleChangeTaskHeading, handleChangeAssignee, handleChangeStatus,handleChangePriority, handleChangeDate ,handleSubmit ,ipt}=props
   return (
 <>
    
 <form className="form" onSubmit={handleSubmit}>
 
 <div className="forminp">
+<input className="iptfieldtaskheading" type="text" placeholder="Enter the Task Heading" required onChange={handleChangeTaskHeading} value={ipt.taskHeading} />
+
 <input className="iptfieldtask" type="text" placeholder="Enter the task details" required onChange={handleChangeTask} value={ipt.task} />
 
 <input className="iptfieldasignee" type="text" placeholder="Enter the asignee" required onChange={handleChangeAssignee} value={ipt.assignee}/>

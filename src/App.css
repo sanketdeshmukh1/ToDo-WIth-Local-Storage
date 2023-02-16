@@ -47,6 +47,14 @@ width: 100%;
   border-radius: 0.5rem;
   text-align: center;
 }
+
+.iptfieldtaskheading{
+  width: 20rem;
+  background-color: white;
+  border-radius: 0.5rem;
+  text-align: center;
+}
+
 .iptfieldasignee{
   width: 10rem;
   background-color: white;

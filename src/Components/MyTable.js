@@ -5,7 +5,7 @@ import './table.css'
 import Icon from "react-crud-icons";
 
 export const MyTable = (props) => { 
-const {browserData,handleDelete,handleEdit,showModal,setShowModal}=props
+const {browserData,handleDelete,handleEdit,showEditModal,setShowEditModal,showTaskModal,setShowTaskModal,handleTaskDesc }=props
 
     // const columns=useMemo(()=>COLUMNS,[])
      // const data=useMemo(()=>dummyData,[])
@@ -48,12 +48,19 @@ const { getTableProps,getTableBodyProps,headerGroups,rows,prepareRow } = tableIn
                         <tr {...row.getRowProps()}>
                             {
                                 row.cells.map((cell)=>{
-                                    return <td onClick={()=>{ if(cell.column.Header==="Delete"){
-                                   handleDelete(row.original.taskId)} else if(cell.column.Header==="Edit") 
+                                    return <td onClick={()=>{ 
+                                        if(cell.column.Header==="Delete"){
+                                        handleDelete(row.original.taskId)  } 
+                                   else if(cell.column.Header==="Edit") 
                                    {
                                     handleEdit(row.original.taskId)
-                                    setShowModal(true) 
-                                     } 
+                                    setShowEditModal(true) 
+                                     }
+                                     else if(cell.column.Header==="Task Heading"){
+                                        handleTaskDesc(row.original.taskId)
+                                      setShowTaskModal(true)
+                                     }
+
                                     }} {...cell.getCellProps()}>{cell.render('Cell')}</td>
                                 })
                             }
