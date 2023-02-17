@@ -22,7 +22,7 @@ const [editId,setEditId]=useState(0)
 const [browserData,setbrowserData]=useState([])
 //const [maxx,setMaxx]=useState(1)
 useEffect(() => {
-  setbrowserData(JSON.parse(localStorage.getItem("sanket")))   
+  setbrowserData(JSON.parse(localStorage.getItem("sanket") || "[]"  ))   
   console.log("UseEffect Run")
 }, [fetchData])
 
