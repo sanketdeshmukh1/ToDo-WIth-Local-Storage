@@ -5,7 +5,7 @@ import './table.css'
 import Icon from "react-crud-icons";
 
 export const MyTable = (props) => { 
-const {browserData,handleDelete,handleEdit,showEditModal,setShowEditModal,showTaskModal,setShowTaskModal,handleTaskDesc }=props
+const {browserData,handleDelete,handleEdit,showEditModal,setShowEditModal,showTaskModal,setShowTaskModal,handleTaskDesc, setShowAddNewTaskModal,showAddNewTaskModal }=props
 
     // const columns=useMemo(()=>COLUMNS,[])
      // const data=useMemo(()=>dummyData,[])

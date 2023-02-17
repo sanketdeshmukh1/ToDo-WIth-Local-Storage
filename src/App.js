@@ -15,6 +15,7 @@ const [ipt, setIpt] = useState({taskId:1,task:"",taskHeading:"",assignee:"",stat
 const [temp,setTemp]=useState(0)
 const [showEditModal,setShowEditModal] = useState(false);
 const [showTaskModal,setShowTaskModal] = useState(false);
+const [showAddNewTaskModal,setShowAddNewTaskModal] = useState(false);
 const [fetchData,setFetchData]=useState(0)
 const [isEdit,setIsEdit]=useState(false)
 const [editId,setEditId]=useState(0)
@@ -205,18 +206,19 @@ const handleEdit=(id)=>{
   <img className="mainlogo" src={todo} alt="" />
     <div className="maincontainer">
 
-  
-      <Input handleChangeTask={handleChangeTask} handleChangeTaskHeading={handleChangeTaskHeading} handleChangeAssignee={handleChangeAssignee} handleChangeStatus={handleChangeStatus} handleChangePriority={handleChangePriority} handleChangeDate={handleChangeDate} handleSubmit={handleSubmit}  ipt={ipt}/>
-      
+    <button className="submitbtn" onClick={()=>{setShowAddNewTaskModal(true)}} >Add Task</button>
+
+      {/* <Input handleChangeTask={handleChangeTask} handleChangeTaskHeading={handleChangeTaskHeading} handleChangeAssignee={handleChangeAssignee} handleChangeStatus={handleChangeStatus} handleChangePriority={handleChangePriority} handleChangeDate={handleChangeDate} handleSubmit={handleSubmit} setShowEditModal={setShowEditModal} ipt={ipt}/>
+       */}
       {/* <Output handleDelete={handleDelete} handleEdit={handleEdit} browserData={browserData}/> */}
       <h6 className='blank'> </h6>
-      <MyTable browserData={browserData} handleDelete={handleDelete} handleChangeTaskHeading={handleChangeTaskHeading} handleEdit={handleEdit} showEditModal={showEditModal} setShowEditModal={setShowEditModal} showTaskModal={showTaskModal} setShowTaskModal={setShowTaskModal} handleTaskDesc={handleTaskDesc} 
+      <MyTable browserData={browserData} handleDelete={handleDelete} handleChangeTaskHeading={handleChangeTaskHeading} handleEdit={handleEdit} showEditModal={showEditModal} setShowEditModal={setShowEditModal} showTaskModal={showTaskModal} setShowTaskModal={setShowTaskModal} handleTaskDesc={handleTaskDesc} showAddNewTaskModal={showAddNewTaskModal} setShowAddNewTaskModal={setShowAddNewTaskModal}
       
       />
 
       {/* <ModalContext.Provider value={{id2:1}}> */}
       <ModalComponent handleChangeTask={handleChangeTask} handleChangeTaskHeading={handleChangeTaskHeading} handleChangeAssignee={handleChangeAssignee} handleChangeStatus={handleChangeStatus} handleChangePriority={handleChangePriority} handleChangeDate={handleChangeDate} handleSubmit={handleSubmit} ipt={ipt} setIpt={setIpt} showEditModal={showEditModal} setShowEditModal={setShowEditModal}
-      showTaskModal={showTaskModal} setShowTaskModal={setShowTaskModal} handleTaskDesc={handleTaskDesc} />
+      showTaskModal={showTaskModal} setShowTaskModal={setShowTaskModal} handleTaskDesc={handleTaskDesc} showAddNewTaskModal={showAddNewTaskModal} setShowAddNewTaskModal={setShowAddNewTaskModal} />
       {/* </ModalContext.Provider> */}
     </div>
 

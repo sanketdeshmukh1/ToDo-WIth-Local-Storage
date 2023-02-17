@@ -2,7 +2,7 @@ import React from 'react'
 //import '../App.css';
 
 function Input(props) {
-    const {handleChangeTask, handleChangeTaskHeading, handleChangeAssignee, handleChangeStatus,handleChangePriority, handleChangeDate ,handleSubmit ,ipt}=props
+    const {handleChangeTask, handleChangeTaskHeading, handleChangeAssignee, handleChangeStatus,handleChangePriority, handleChangeDate ,handleSubmit,setShowEditModal ,ipt}=props
   return (
 <>
    
@@ -15,7 +15,7 @@ function Input(props) {
 
 <input className="iptfieldasignee" type="text" placeholder="Enter the asignee" required onChange={handleChangeAssignee} value={ipt.assignee}/>
 
-<select className="iptfielddropdown" onChange={handleChangeStatus} required value={ipt.status} >
+<select className="iptfielddropdownstatus" onChange={handleChangeStatus} required value={ipt.status} >
 <option value="Not Started">Not Started</option>
 <option value="In Progress">In Progress</option>
 <option value="Done">Done</option>
@@ -23,7 +23,7 @@ function Input(props) {
 <option value="Blocked">Blocked</option>
 </select>
 
-<select className="iptfielddropdown" onChange={handleChangePriority} required value={ipt.priority} >
+<select className="iptfielddropdownpriority" onChange={handleChangePriority} required value={ipt.priority} >
 <option value="High">High</option>
 <option value="Medium">Medium</option>
 <option value="Low">Low</option>
@@ -31,7 +31,7 @@ function Input(props) {
 
 <input className="iptfielddate" type="date" onChange={handleChangeDate} required value={ipt.dot}/>
 </div>
-<button className="submitbtn" type="submit" >Add Task</button>
+<button className="submitbtn"  type="submit" >Add Task</button>
 </form>
 
 </>
