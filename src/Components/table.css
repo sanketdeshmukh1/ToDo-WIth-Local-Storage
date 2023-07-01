@@ -21,3 +21,6 @@ table th {
 .sortingSym{
   background-color: #04AA6D;
 }
+.de{
+  cursor: pointer;
+}

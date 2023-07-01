@@ -1,78 +1,79 @@
-@import url('https://fonts.googleapis.com/css2?family=Baloo+Bhaijaan+2&display=swap');
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Baloo Bhaijaan 2', cursive;
-    background-color: #fde68a;
+@import url("https://fonts.googleapis.com/css2?family=Baloo+Bhaijaan+2&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Baloo Bhaijaan 2", cursive;
+  background-color: #fde68a;
 }
-.mainheading{
-  background-color:#fca5a5;
+.mainheading {
+  background-color: #fca5a5;
   text-align: center;
-  border-radius: 1rem;
+  border-radius: 16px;
+  width: 100vw;
+  font-size: 3rem;
+}
+.parentcontainer {
+  display: flex;
   width: 100%;
 }
-.parentcontainer{
-display: flex;
-width: 100%;
+.mainlogo {
+  flex-grow: 0.5;
 }
-.mainlogo{
-  flex-grow:0.5;
-}
-.maincontainer{
+.maincontainer {
   color: white;
   width: 100%;
   background-color: black;
   padding-top: 1rem;
 }
-.form{
+.form {
   background-color: black;
   margin-top: 0rem;
   margin-bottom: 2rem;
   padding-bottom: 2rem;
 }
-.addnewtaskHeading{
+.addnewtaskHeading {
   background-color: #818cf8;
 }
-.taskdesc{
+.taskdesc {
   background-color: black;
   color: white;
 }
-.descContainer{
-width: 100%;
-height: 50%;
-background-color: black;
-margin-bottom: 2rem;
-color: white;
-word-wrap: break-word;
+.descContainer {
+  width: 100%;
+  height: 50%;
+  background-color: black;
+  margin-bottom: 2rem;
+  color: white;
+  word-wrap: break-word;
 }
 
-.modalclosebtn{
+.modalclosebtn {
   background-color: red;
   color: white;
   width: 4rem;
   border-radius: 2rem;
 }
-.forminp{
+.forminp {
   display: flex;
   flex-direction: row;
   background-color: black;
   /* justify-content: center; */
   justify-content: space-around;
   padding-bottom: 2rem;
-  padding-top: 2rem;
+  padding-top: 1rem;
   flex-wrap: wrap;
 }
 
-.iptfieldtask{
-  width: 20rem;
+.iptfieldtask {
+  display: block;
   background-color: white;
   border-radius: 0.5rem;
   text-align: center;
-  margin: 0.5rem 0rem 0.5rem 0rem;
+  margin: 0.5rem 0rem 0.75rem 0rem;
 }
 
-.iptfieldtaskheading{
+.iptfieldtaskheading {
   width: 20rem;
   background-color: white;
   border-radius: 0.5rem;
@@ -80,117 +81,363 @@ word-wrap: break-word;
   margin: 0rem 0rem 0.5rem 0rem;
 }
 
-.iptfieldasignee{
-  width: 10rem;
-  background-color: white;
-  border-radius: 0.5rem;
-  text-align: center;
-}
-.iptfielddropdownstatus{
-  width: 10rem;
+.iptfieldasignee {
+  width: 13rem;
   height: 2rem;
   background-color: white;
   border-radius: 0.5rem;
   text-align: center;
 }
-.iptfielddropdownpriority{
-  
+.iptfielddropdownstatus {
+  width: 12rem;
+  height: 1.85rem;
   background-color: white;
   border-radius: 0.5rem;
   text-align: center;
+}
+.iptfielddropdownpriority {
+  background-color: white;
+  border-radius: 0.5rem;
+  text-align: center;
+  width: 12rem;
+  height: 1.85rem;
+  margin-top: 1rem;
 }
 
-.iptfielddate{
-  width: 10rem;
+.iptfielddate {
+  width: 12rem;
+  height: 1.85rem;
   background-color: white;
   border-radius: 0.5rem;
   text-align: center;
-   margin-top: 1rem; 
-   
+  margin-top: 1rem;
 }
-.submitbtn{
+
+.submitbtn {
   background-color: #818cf8;
-  width: 10rem ;
+  width: 10rem;
   padding: 0.5rem;
   border-radius: 1rem;
-display: block;
-margin: auto;
+  display: block;
+  margin: auto;
+  cursor: pointer;
 }
-.opt{
+.opt {
   background-color: black;
   color: white;
 }
-.opcontainer{
+.opcontainer {
   background-color: black;
 }
-.optitle{
+.optitle {
   background-color: red;
   text-align: center;
   margin: 1rem 0rem 1rem 0rem;
 }
 
-.op{
+.op {
   background-color: black;
 }
 
-
-.showasignee{
+.showasignee {
   width: 33%;
 }
-.showstatus{
+.showstatus {
   width: 33%;
 }
-.opheader{
+.opheader {
   display: flex;
   background-color: black;
   width: 100%;
-  justify-content: space-around
+  justify-content: space-around;
 }
 
-.taskcontent{
+.taskcontent {
   background-color: black;
   display: flex;
   flex-direction: column;
 }
 
-.asigneecontent{
+.asigneecontent {
   background-color: black;
   display: flex;
-  flex-direction: column; 
+  flex-direction: column;
 }
-.statuscontent{
+.statuscontent {
   background-color: black;
   display: flex;
-  flex-direction: column; 
-  
+  flex-direction: column;
 }
-.statuscontent>h4,.asigneecontent>h4,.taskcontent>h4,.statuscontent>h3,.asigneecontent>h3,.taskcontent>h3{
+.statuscontent > h4,
+.asigneecontent > h4,
+.taskcontent > h4,
+.statuscontent > h3,
+.asigneecontent > h3,
+.taskcontent > h3 {
   background-color: black;
 }
-.showButton{
+.showButton {
   background-color: aquamarine;
   width: 4rem;
   border-radius: 1rem;
-  margin-bottom: 1.5px
+  margin-bottom: 1.5px;
 }
-.hide{
+.hide {
   visibility: hidden;
 }
 
-.statuscontent>h4,.asigneecontent>h4,.taskcontent>h4{
-  
-  padding-bottom: 0.10rem;
+.statuscontent > h4,
+.asigneecontent > h4,
+.taskcontent > h4 {
+  padding-bottom: 0.1rem;
   margin-bottom: 0.1rem;
 }
 
-li{
-    background-color: black;
-    list-style: none;
-    padding-bottom: 0.10rem;
-    margin-bottom: 0.1rem;
+
+
+li {
+  background-color: black;
+  list-style: none;
+  padding-bottom: 0.1rem;
+  margin-bottom: 0.1rem;
 }
-.blank{
-height: 0.5rem;
-background-color: black;
+.blank {
+  height: 0.5rem;
+  background-color: black;
 }
 
+
+.crud-icon.tiny {
+  height: 22px !important;
+  width: 22px !important;
+  padding: 0px !important;
+} 
+.crud-icon.tiny > svg {
+  height: 32px !important;
+  width: 32px !important;
+}
+
+.iptfieldtaskheading {
+  width: 25%;
+  height: 2rem;
+  font-size: 1rem;
+  margin: 0.5rem;
+}
+
+.iptfieldtask {
+  width: 50%;
+  height: 8rem;
+  font-size: 1rem;
+  margin: 0.5rem;
+}
+.iptfieldasignee {
+  width: 25%;
+  height: 2rem;
+  font-size: 1rem;
+  margin: 2rem 1rem;
+}
+.iptfielddropdownstatus{
+  width: 25%;
+  height: 2rem;
+  font-size: 1rem;
+  margin: 2rem 1rem;
+}
+.iptfielddropdownpriority{
+  width: 25%;
+  height: 2rem;
+  font-size: 1rem;
+  margin: 2rem 1rem;
+}
+.iptfielddate{
+  width: 25%;
+  height: 2rem;
+  font-size: 1rem;
+  margin: 2rem 1rem;
+}
+
+@media screen and (max-width: 1024px) {
+  * {
+    /* background-color: red; */
+  }
+  .mainheading {
+    width: 300%;
+    font-size: 4rem;
+  }
+
+  .parentcontainer {
+  width: 300vw;
+}
+
+  .maincontainer {
+  width: 75%;
+}
+
+  .mainlogo {
+    flex-shrink: 2;
+    width: 25%;
+  }
+
+table td, table th{
+font-size: xxx-large;
+}
+
+.submitbtn{
+  font-size:50px;
+  width: 20rem;
+}
+ .crud-icon.tiny {
+  height: 32px;
+  width: 32px;
+  padding: 0px;
+} 
+.crud-icon.tiny > svg {
+  height: 58px !important;
+  width: 58px !important;
+}
+.crud-icon.tiny {
+  padding: 0px !important ;
+}
+.addnewtaskHeading {
+width: 100%;
+height: 4rem;
+font-size: 3rem;
+}
+.form {
+  height: 80%;
+}
+.forminp {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  justify-content: space-evenly;
+  align-items: center;
+  margin-bottom: 3rem;
+}
+.iptfieldtaskheading {
+  width: 75%;
+  height: 4rem;
+  font-size: 3rem;
+  margin: 0rem;
+}
+
+.iptfieldtask {
+width: 75%;
+height: 10rem;
+font-size: 3rem;
+  margin: 0rem;
+}
+.iptfieldasignee {
+  width: 75%;
+  height: 4rem;
+  font-size: 3rem;
+  margin: 0rem;
+}
+.iptfielddropdownstatus{
+  width: 75%;
+  height: 4rem;
+  font-size: 3rem;
+  margin: 0rem;
+}
+.iptfielddropdownpriority{
+  width: 75%;
+  height: 5rem;
+  font-size: 3rem;
+  margin: 0rem;
+}
+.iptfielddate{
+  width: 75%;
+  height: 4rem;
+  font-size: 3rem;
+  margin: 0rem;
+}
+
+}
+@media screen and (max-width: 640px) {
+  * {
+    /* background-color: greenyellow; */
+  }
+
+  .parentcontainer {
+    width: 200vw;
+    flex-direction: column-reverse;
+  } 
+
+  .maincontainer {
+    width: 400vw;
+  }
+
+  .mainheading {
+    width: 400vw;
+    font-size: 4rem;
+  }
+  .mainlogo {
+    flex-shrink: 2;
+    display: none;
+  }
+  table td, table th{
+    font-size: xxx-large;
+    overflow: auto;
+    }
+
+    .submitbtn{
+      font-size: 60px;
+      width: 25rem;
+    }
+
+    .addnewtaskHeading {
+      width: 100%;
+      height: 5rem;
+      font-size: 4rem;
+      }
+      .form {
+        height: 85%;
+      }
+      .forminp {
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+        justify-content: space-evenly;
+        align-items: center;
+        margin-bottom: 4rem;
+      }
+      .iptfieldtaskheading {
+        width: 80%;
+        height: 5rem;
+        font-size: 3.8rem;
+        margin: 0rem;
+      }
+      
+      .iptfieldtask {
+      width: 80%;
+      height: 12rem;
+      font-size: 3.8rem;
+        margin: 0rem;
+      }
+      .iptfieldasignee {
+        width: 80%;
+        height: 5rem;
+        font-size: 3.8rem;
+        margin: 0rem;
+      }
+      .iptfielddropdownstatus{
+        width: 80%;
+        height: 5rem;
+        font-size: 3.8rem;
+        margin: 0rem;
+      }
+      .iptfielddropdownpriority{
+        width: 80%;
+        height: 5rem;
+        font-size: 3.8rem;
+        margin: 0rem;
+      }
+      .iptfielddate{
+        width: 80%;
+        height: 5rem;
+        font-size: 3.8rem;
+        margin: 0rem;
+      }
+      
+    
+
+}
