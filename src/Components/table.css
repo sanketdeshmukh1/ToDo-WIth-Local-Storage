@@ -10,6 +10,18 @@ table td, table th {
   background-color: black;
 }
 
+table {
+  font-family: Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+table td, table th {
+  border: 1px solid #ddd;
+  padding: 8px;
+  background-color: black;
+}
+
 
 table th {
   padding-top: 12px;
@@ -20,4 +32,7 @@ table th {
 }
 .sortingSym{
   background-color: #04AA6D;
+}
+.de{
+  cursor: pointer;
 }

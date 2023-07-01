@@ -14,28 +14,26 @@ onRequestClose={()=>{setShowEditModal(false)
   setIpt({...ipt,task:"",taskHeading:"",assignee:"",status:"Not Started"})
 }} style={
 {
-    overlay:{
-//        backgroundColor:'#818cf8',
+    Overlay:{
+//  backgroundColor: 'yellow',
+//  width:"160rem",
     },
     content:{
-        backgroundColor:'white',
-        width:'30rem',
-        height:'30rem',
+      backgroundColor:'white',
+      width:'60%',
+      height:'60%',
         margin:"auto",
         borderRadius:"1rem",
         textAlign:"center"
-    }
+
+    },
+    
 }
 
   }>
 <h3 className='addnewtaskHeading'>Edit Task</h3>
   <Input handleChangeTask={handleChangeTask} handleChangeTaskHeading={handleChangeTaskHeading} handleChangeAssignee={handleChangeAssignee} handleChangeStatus={handleChangeStatus} handleChangePriority={handleChangePriority} handleChangeDate={handleChangeDate} handleSubmit={handleSubmit} ipt={ipt}/> 
 
-<button className='modalclosebtn' onClick={()=>{setShowEditModal(false)   
-   setIpt({...ipt,task:"",taskHeading:"",assignee:"",status:"Not Started"})
-  }
-   
-   }>close</button>
 </Modal>
 
 <Modal isOpen={showTaskModal}
@@ -44,9 +42,10 @@ onRequestClose={()=>{setShowTaskModal(false)
 {
     overlay:{
 //        backgroundColor:'#818cf8',
+
     },
     content:{
-        backgroundColor:'white',
+        backgroundColor:'green',
         width:'30rem',
         height:'30rem',
         margin:"auto",
@@ -63,9 +62,9 @@ onRequestClose={()=>{setShowTaskModal(false)
 <div className='taskdesc'>{ipt.task}</div>
 </div>
 
-<button className='modalclosebtn' onClick={()=>{setShowTaskModal(false)
+{/* <button className='modalclosebtn' onClick={()=>{setShowTaskModal(false)
 setIpt({...ipt,task:"",taskHeading:"",assignee:"",status:"Not Started"})
-}}>close</button>
+}}>close</button> */}
 </Modal>
 
 
@@ -74,13 +73,18 @@ onRequestClose={()=>{setShowAddNewTaskModal(false)
   setIpt({...ipt,task:"",taskHeading:"",assignee:"",status:"Not Started"})
 }} style={
 {
+  
     overlay:{
 //        backgroundColor:'#818cf8',
+  // width:"80rem",
+  // height:"80rem",
+  // textAlign:"center",
+
     },
     content:{
         backgroundColor:'white',
-        width:'30rem',
-        height:'30rem',
+        width:'60%',
+        height:'60%',
         margin:"auto",
         borderRadius:"1rem",
         textAlign:"center"
@@ -90,12 +94,12 @@ onRequestClose={()=>{setShowAddNewTaskModal(false)
   }>
 <h3 className='addnewtaskHeading'>Add New Task</h3>
   <Input handleChangeTask={handleChangeTask} handleChangeTaskHeading={handleChangeTaskHeading} handleChangeAssignee={handleChangeAssignee} handleChangeStatus={handleChangeStatus} handleChangePriority={handleChangePriority} handleChangeDate={handleChangeDate} handleSubmit={handleSubmit} ipt={ipt}/> 
-
+{/* 
 <button className='modalclosebtn' onClick={()=>{setShowAddNewTaskModal(false)   
    setIpt({...ipt,task:"",taskHeading:"",assignee:"",status:"Not Started"})
   }
    
-   }>close</button>
+   }>close</button> */}
 </Modal>
 </>
   )

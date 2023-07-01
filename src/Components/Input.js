@@ -11,7 +11,9 @@ function Input(props) {
 <div className="forminp">
 <input className="iptfieldtaskheading" type="text" placeholder="Enter the Task Heading" required onChange={handleChangeTaskHeading} value={ipt.taskHeading} />
 
-<input className="iptfieldtask" type="text" placeholder="Enter the task details" required onChange={handleChangeTask} value={ipt.task} />
+{/* <input className="iptfieldtask" type="text" placeholder="Enter the task details" required onChange={handleChangeTask} value={ipt.task} /> */}
+
+<textarea name="" className='iptfieldtask' id="" cols="40" rows="8" placeholder='Enter the Task Details' required onChange={handleChangeTask} value={ipt.task}/>
 
 <input className="iptfieldasignee" type="text" placeholder="Enter the asignee" required onChange={handleChangeAssignee} value={ipt.assignee}/>
 
@@ -31,7 +33,7 @@ function Input(props) {
 
 <input className="iptfielddate" type="date" onChange={handleChangeDate} required value={ipt.dot}/>
 </div>
-<button className="submitbtn"  type="submit" >Add Task</button>
+<button className="submitbtn"  type="submit" > Add Task</button>
 </form>
 
 </>
